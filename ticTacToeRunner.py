@@ -2,8 +2,8 @@
 # this is the runner for the ticTacToe program
 import ticTacToe
 
-theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
-            'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
-            'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+theBoard = {'TopL': ' ', 'TopM': ' ', 'TopR': ' ',
+            'MidL': ' ', 'MidM': ' ', 'MidR': ' ',
+            'BotL': ' ', 'BotM': ' ', 'BotR': ' '}
 
 ticTacToe.startGame('X', theBoard)

@@ -6,8 +6,7 @@ def printBoard(board):
     print('_____')
     print(board['MidL'] + '|' + board['MidM'] + '|' + board['MidR'])
     print('_____')
-    print(board['BotL'] + '|' + board['BotM'] + '|' + board['BotR'])
-printBoard(board)   
+    print(board['BotL'] + '|' + board['BotM'] + '|' + board['BotR'])  
     # TO DO #################################################################
     # Write code in this function that prints the game board.               #
     # The code in this function should only print, the user should NOT      #
@@ -18,48 +17,41 @@ printBoard(board)
 
 def checkWinner(board, player):
     print('Checking if ' + player + ' is a winner...')
-    Top = {'TopL', 'TopM', 'TopR'}
-    Mid = {'MidL', 'MidM', 'MidR'}
-    Bot = {'BotL', 'BotM', 'BotR'}
-    Left = {'TopL', 'MidL', 'BotL'}
-    MidM = {'TopM', 'MidM', 'BotM'}
-    Right = {'TopR', 'MidR', 'BotR'}
-    TLBR = {'TopL', 'MidM', 'BotR'}
-    BLTR = {'BotL', 'MidM', 'TopR'}
-    if all(Top == X for i in range(9)):
-        print('X WINS')
-    if all(Mid == X for i in range(9)):
-        print('X WINS')
-    if all(Bot == X for i in range(9)):
-        print('X WINS')
-    if all(Left == X for i in range(9)):
-        print('X WINS')
-    if all(MidM == X for i in range(9)):
-        print('X WINS')
-    if all(Right == X for i in range(9)):
-        print('X WINS')
-    if all(TLBR == X for i in range(9)):
-        print('X WINS')
-    if all(BLTR == X for i in range(9)):
-        print('X WINS')
-    if all(Top == O for i in range(9)):
-        print('O WINS')
-    if all(Mid == O for i in range(9)):
-        print('O WINS')
-    if all(Bot == O for i in range(9)):
-        print('O WINS')
-    if all(Left == O for i in range(9)):
-        print('O WINS')
-    if all(MidM == O for i in range(9)):
-        print('O WINS')
-    if all(Right == O for i in range(9)):
-        print('O WINS')
-    if all(TLBR == O for i in range(9)):
-        print('O WINS')
-    if all(BLTR == O for i in range(9)):
-        print('O WINS')
+    for i in range(9):
+        if board['TopL'] and ['TopM'] and ['TopR'] == 'X':
+            break
+        if board['MidL'] and ['MidM'] and ['MidR'] == 'X':
+            break
+        if board['BotL'] and ['BotM'] and ['BotR'] == 'X':
+            break
+        if board['TopL'] and ['MidM'] and ['BotR'] == 'X':
+            break
+        if board['TopR'] and ['MidM'] and ['BotL'] == 'X':
+            break
+        if board['TopL'] and ['MidL'] and ['BotL'] == 'X':
+            break
+        if board['TopM'] and ['MidM'] and ['BotM'] == 'X':
+            break
+        if board['TopR'] and ['MidR'] and ['BotR'] == 'X':
+            break
+        if board['TopL'] and ['TopM'] and ['TopR'] == 'O':
+            break
+        if board['MidL'] and ['MidM'] and ['MidR'] == 'O':
+            break
+        if board['BotL'] and ['BotM'] and ['BotR'] == 'O':
+            break
+        if board['TopL'] and ['MidM'] and ['BotR'] == 'O':
+            break
+        if board['TopR'] and ['MidM'] and ['BotL'] == 'O':
+            break
+        if board['TopL'] and ['MidL'] and ['BotL'] == 'O':
+            break
+        if board['TopM'] and ['MidM'] and ['BotM'] == 'O':
+            break
+        if board['TopR'] and ['MidR'] and ['BotR'] == 'O':
+            break
     # TO DO #################################################################
-    # Write code in this function that checks the tic-tac-toe board          #
+    # Write code in this function that checks the tic-tac-toe board         #
     # to determine if the player stored in variable 'player' currently      #
     # has a winning position on the board.                                  #
     # This function should return True if the player specified in           #
@@ -84,7 +76,7 @@ def startGame(startingPlayer, board):
             print('X wins!') #Prints The Win for X
             break #Breaks the loop
         elif ( checkWinner(board, 'O') ): #Checks for O winning parameters
-            print('O wins!') #Prins the win for O
+            print('O wins!') #Prints the win for O
             break #Breaks the loop
     
         if turn == 'X': #Checks to see if turn is equal to X
